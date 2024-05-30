@@ -21,5 +21,8 @@
 ## Q&A 게시판
 - 전체 목록 혹은 검색을 통한 질문 목록
 ![image](https://github.com/Hojoomoney/personal-project/assets/138412343/c8bcf61f-054a-4edf-ab11-dd937acd4172)
+## 질문 상세 페이지
+![image](https://github.com/Hojoomoney/personal-project/assets/138412343/95b7af27-eb54-4c31-bc00-e8a4105a6aa9)
+
  
 
