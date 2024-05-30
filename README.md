@@ -9,9 +9,9 @@
 ## 메인 페이지
 ![image](https://github.com/Hojoomoney/personal-project/assets/138412343/f13f6083-b641-4c73-9242-778a13ddfb73)
 ## 로그인 및 회원가입
-<img src="https://github.com/Hojoomoney/personal-project/assets/138412343/7f5631e3-0872-407e-ae1f-cd11e19ad330" width="600" height="400"/>
-<img src="https://github.com/Hojoomoney/personal-project/assets/138412343/b5ca46cd-45c9-4d9d-b420-e960922e8ba4" width="600" height="400"/>
-<br/>
+![image](https://github.com/Hojoomoney/personal-project/assets/138412343/6d2a8726-5f1b-40f5-be85-d291d3583de0)
+![image](https://github.com/Hojoomoney/personal-project/assets/138412343/3d332014-f82b-4f82-92d2-2dd197906998)
+
 ## 최신 뉴스 목록 페이지
 ![image](https://github.com/Hojoomoney/personal-project/assets/138412343/8b4c7c66-0a2e-4ca2-870e-c5a0fde09383)
 
