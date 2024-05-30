@@ -1,5 +1,6 @@
 'use client';
 
+import { jwtDecode } from "jwt-decode";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { destroyCookie, parseCookies } from "nookies";
@@ -30,9 +31,10 @@ export default function Header(){
     return (
 <header className="flex shadow-md py-4 px-4 sm:px-10 bg-white font-[sans-serif] min-h-[70px] tracking-wide relative z-50">
   <div className="flex flex-wrap items-center justify-between gap-5 w-full">
-    <a href="javascript:void(0)">
+    <a href="/">
       <img
-        src="https://readymadeui.com/readymadeui.svg"
+        style={{ width: "100px", height: "80px"}}
+        src="https://cdn.pixabay.com/photo/2017/09/13/22/47/justice-2747368_1280.png"
         alt="logo"
         className="w-36"
       />
@@ -112,7 +114,7 @@ export default function Header(){
         </li>
         <li className="max-lg:border-b border-gray-300 max-lg:py-3 px-3">
           <a
-            href={parseCookies().refreshToken != null ? "/detail" : "/login"} 
+            href={parseCookies().refreshToken != null ? `/detail/${jwtDecode<any>(parseCookies().refreshToken).id}` : "/login"} 
             className="hover:text-[#007bff] text-gray-500 block font-semibold text-[15px]"
           >
             My Account
@@ -131,9 +133,9 @@ export default function Header(){
       <button onClick={handleLogout} className="px-4 py-2 text-sm rounded-full font-bold text-white border-2 border-[#007bff] bg-[#007bff] transition-all ease-in-out duration-300 hover:bg-transparent hover:text-[#007bff]">
         Logout
       </button> }
-      <Link href={"/register"} className="px-4 py-2 text-sm rounded-full font-bold text-white border-2 border-[#007bff] bg-[#007bff] transition-all ease-in-out duration-300 hover:bg-transparent hover:text-[#007bff]">
+      {parseCookies().refreshToken == null ? <Link href={"/register"} className="px-4 py-2 text-sm rounded-full font-bold text-white border-2 border-[#007bff] bg-[#007bff] transition-all ease-in-out duration-300 hover:bg-transparent hover:text-[#007bff]">
         Sign up
-      </Link>
+      </Link> : <></> }
       <button id="toggleOpen" className="lg:hidden">
         <svg
           className="w-7 h-7"

@@ -15,7 +15,7 @@ export default function Home() {
     <div className="grid md:grid-cols-2 items-center gap-10 max-w-6xl w-full">
       <div className="max-md:text-center">
         <h2 className="lg:text-5xl text-4xl font-extrabold lg:leading-[55px]">
-          Welcome to LawMate!
+          Welcome to Lawmate!
         </h2>
         <p className="text-sm mt-6">
           Immerse yourself in a hassle-free login journey with our intuitively
@@ -24,7 +24,7 @@ export default function Home() {
           {/* {accessToken} */}
         </p>
         <p className="text-sm mt-10">
-          Don't have an account{" "}
+          Don't have an account?{" "} 
           <a
             href="/register"
             className="text-blue-600 font-semibold hover:underline ml-1"

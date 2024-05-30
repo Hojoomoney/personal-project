@@ -52,7 +52,7 @@ public class UserController {
     @GetMapping("/detail")
     public ResponseEntity<UserDto> findById(@RequestParam("id") Long id) {
         log.info("입력받은 정보 : {}", id );
-        return ResponseEntity.ok(service.findById(id));
+        return ResponseEntity.ok(service.getUserById(id));
     }
     @PostMapping("/isExist")
     public ResponseEntity<Boolean> isExist(@RequestBody String username) {

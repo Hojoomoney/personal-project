@@ -63,7 +63,7 @@ public class UserServiceImpl implements UserService{
     public Messenger deleteById(Long id) {
         userRepository.deleteById(id);
         return Messenger.builder()
-                .message(userRepository.existsById(id) ? "SUCCESS" : "FAILURE")
+                .message(userRepository.existsById(id) ? "FAILURE" : "SUCCESS")
                 .build();
     }
 
@@ -85,6 +85,11 @@ public class UserServiceImpl implements UserService{
     @Override
     public Boolean isExist(String username) {
         return userRepository.isExist(username);
+    }
+
+    @Override
+    public UserDto getUserById(Long id) {
+        return userRepository.getUserById(id);
     }
 
 

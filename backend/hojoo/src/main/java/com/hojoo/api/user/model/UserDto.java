@@ -1,5 +1,6 @@
 package com.hojoo.api.user.model;
 
+import com.hojoo.api.article.model.Article;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -7,6 +8,7 @@ import lombok.NoArgsConstructor;
 import org.springframework.stereotype.Component;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Component //Object 같은거
 @Builder
@@ -23,4 +25,6 @@ public class UserDto {
     private LocalDateTime modDate;
     private String token;
     private String role;
+
+    private List<UserArticlesDto> articles;
 }

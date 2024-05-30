@@ -8,6 +8,9 @@ import com.hojoo.api.user.model.User;
 import com.hojoo.api.user.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Slice;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -30,8 +33,8 @@ public class ArticleServiceImpl implements ArticleService {
     }
 
     @Override
-    public List<ArticleDto> findAll() {
-        return articleRepository.findAll().stream().map(this::entityToDto).toList();
+    public List<ArticleDto> getListAll() {
+        return articleRepository.getListAll();
     }
 
     @Override
@@ -48,6 +51,16 @@ public class ArticleServiceImpl implements ArticleService {
     @Override
     public ArticleDto findById(Long id) {
         return articleRepository.getArticle(id);
+    }
+
+    @Override
+    public Slice<ArticleDto> getPage(String keyword, Pageable pageable) {
+        return articleRepository.getPage(keyword, pageable);
+    }
+
+    @Override
+    public List<ArticleDto> findTitleByKeyword(String keyword) {
+        return articleRepository.findTitleByKeyword(keyword);
     }
 
 

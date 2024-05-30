@@ -8,6 +8,9 @@ import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
+import org.springframework.data.web.PageableDefault;
 import org.springframework.http.ResponseEntity;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
@@ -32,8 +35,8 @@ public class ArticleController {
     }
 
     @GetMapping("/list")
-    public ResponseEntity<List<ArticleDto>> findAll() {
-        return ResponseEntity.ok(service.findAll());
+    public ResponseEntity<List<ArticleDto>> getListAll() {
+        return ResponseEntity.ok(service.getListAll());
     }
 
     @GetMapping("/detail")
@@ -54,5 +57,14 @@ public class ArticleController {
     public ResponseEntity<Messenger> modify(@RequestBody ArticleDto articleDto) {
         log.info("입력받은 정보 : {}", articleDto );
         return ResponseEntity.ok(service.modify(articleDto));
+    }
+
+    @GetMapping("/page")
+    public ResponseEntity<List<ArticleDto>> getPage(@RequestParam("keyword") String keyword, @PageableDefault(size = 10, sort = "id", direction = Sort.Direction.DESC) Pageable pageable){
+        return ResponseEntity.ok(service.getPage(keyword, pageable).getContent());
+    }
+    @GetMapping("/search")
+    public ResponseEntity<List<ArticleDto>> findTitleByKeyword(@RequestParam("keyword") String keyword){
+        return ResponseEntity.ok(service.findTitleByKeyword(keyword));
     }
 }

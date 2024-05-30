@@ -33,4 +33,6 @@ public interface UserService {
     UserDto findById(Long id);
 
     Boolean isExist(String username);
+
+    UserDto getUserById(Long id);
 }

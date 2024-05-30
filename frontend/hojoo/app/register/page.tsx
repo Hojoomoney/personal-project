@@ -78,17 +78,22 @@ const handleAlert = () => {
   <div className="container max-w-2xl mx-auto flex-1 flex flex-col items-center justify-center px-2">
     <div className="bg-white px-6 py-8 rounded shadow-md text-black w-full">
       <h1 className="mb-8 text-3xl text-center">Sign up</h1>
-      <input {...register("username", { required: true })}
-        type="email"
-        className="block border border-grey-light w-full p-3 rounded mb-4"
-        name="username"
-        placeholder="Username"
-        required
-      />
-      <button onClick={handleCheck} className="ml-4 px-6 py-2 text-sm rounded-full font-bold text-white border-2 border-[#007bff] bg-[#007bff] transition-all ease-in-out duration-300 hover:bg-transparent hover:text-[#007bff]">
-            중복체크
-      </button>
-      <br /><br />
+      <div className="flex items-center mb-4">
+  <input
+    {...register("username", { required: true })}
+    type="email"
+    className="block border border-grey-light w-9/12 p-3 rounded"
+    name="username"
+    placeholder="Username"
+    required
+  />
+  <button
+    onClick={handleCheck}
+    className="ml-4 px-6 py-2 text-sm rounded-full font-bold text-white border-2 border-[#007bff] bg-[#007bff] transition-all ease-in-out duration-300 hover:bg-transparent hover:text-[#007bff]"
+  >
+    중복체크
+  </button>
+</div>
       <input {...register("password", { required: true })}
         type="password"
         className="block border border-grey-light w-full p-3 rounded mb-4"

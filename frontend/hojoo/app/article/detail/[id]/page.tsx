@@ -15,6 +15,7 @@ export default function Detail(props: any){
         question: string
         answer : string
         modDate : Date
+        userId : number
       }
       
       const {
@@ -31,6 +32,7 @@ export default function Detail(props: any){
         })
         .then((response) => response.json())
         .then((data) => {
+            console.log('응답' + JSON.stringify(data));
             setArticle(data);
         })
         .catch((error) => console.log("error:", error));
@@ -53,18 +55,6 @@ export default function Detail(props: any){
       .catch((error) => console.log("error:", error));
     }
 
-    const handleDelete = () => {
-      console.log('id : ' + props.params.id);
-      fetch(`http://localhost:8080/api/article/delete?id=${props.params.id}`, {
-          method: 'DELETE',
-      })
-      .then((response) => response.json())
-      .then((data) => {
-          console.log('응답' + JSON.stringify(data.message));
-          router.push('/article')
-      })
-      .catch((error) => console.log("error:", error));
-    }
     return(
     <>
           <Header></Header>
@@ -120,10 +110,7 @@ export default function Detail(props: any){
               {jwtDecode<any>(parseCookies().refreshToken).role == "ADMIN" ?
                 <button type="submit" className="btn border border-indigo-500 p-2 px-4 font-semibold cursor-pointer text-white rounded-lg bg-indigo-500 hover:bg-indigo-600 transition">
                   답변등록
-                </button> :
-                <button onClick={handleDelete} className="btn border border-red-500 p-2 px-4 font-semibold cursor-pointer text-white rounded-lg bg-red-500 hover:bg-red-600 transition">
-                  질문 삭제하기
-                </button>
+                </button> : <></>
               }
             </div>
           </form>

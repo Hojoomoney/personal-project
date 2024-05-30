@@ -3,16 +3,25 @@ package com.hojoo.api.article.repository;
 import com.hojoo.api.article.model.ArticleDto;
 import com.hojoo.api.article.model.QArticle;
 import com.hojoo.api.common.Messenger;
+import com.hojoo.api.user.model.QUser;
 import com.querydsl.core.types.Projections;
 import com.querydsl.jpa.impl.JPAQueryFactory;
+import jakarta.annotation.Nullable;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Slice;
+import org.springframework.data.domain.SliceImpl;
 import org.springframework.stereotype.Repository;
+
+import java.util.List;
 
 @Repository
 @RequiredArgsConstructor
 public class ArticleDaoImpl implements ArticleDao{
     private final JPAQueryFactory factory;
     private final QArticle article = QArticle.article;
+    private final QUser user = QUser.user;
     @Override
     public ArticleDto getArticle(Long id) {
         return factory.select(
@@ -38,5 +47,50 @@ public class ArticleDaoImpl implements ArticleDao{
 
     }
 
+    @Override
+    public Slice<ArticleDto> getPage(@Nullable String keyword, Pageable pageable) {
+        List<ArticleDto> articles = factory.select(
+                Projections.fields(ArticleDto.class,
+                        article.id,
+                        article.title,
+                        article.question,
+                        article.user.name.as("writerName"))
+        )
+                .from(article)
+                .where(article.title.containsIgnoreCase(keyword))
+                .offset(pageable.getOffset())
+                .limit(pageable.getPageSize())
+                .orderBy(article.id.desc())
+                .fetch();
+
+        return new SliceImpl<>(articles, pageable, articles.size() > pageable.getPageSize());
+    }
+
+    @Override
+    public List<ArticleDto> getListAll() {
+        return factory.select(
+                Projections.fields(ArticleDto.class,
+                        article.id,
+                        article.title,
+                        article.user.name.as("writerName"))
+        )
+                .from(article)
+                .orderBy(article.id.desc())
+                .fetch();
+    }
+
+    @Override
+    public List<ArticleDto> findTitleByKeyword(@Nullable String keyword) {
+        return factory.select(
+                Projections.fields(ArticleDto.class,
+                        article.id,
+                        article.title,
+                        article.user.name.as("writerName"))
+        )
+                .from(article)
+                .where(article.title.containsIgnoreCase(keyword))
+                .orderBy(article.id.desc())
+                .fetch();
+    }
 
 }

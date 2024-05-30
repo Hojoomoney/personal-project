@@ -10,4 +10,6 @@ public interface UserDao {
     Long modifyUserById(UserDto userDto);
 
     Boolean isExist(String username);
+
+    UserDto getUserById(Long id);
 }
