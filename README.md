@@ -13,6 +13,7 @@
 ![image](https://github.com/Hojoomoney/personal-project/assets/138412343/3d332014-f82b-4f82-92d2-2dd197906998)
 
 ## 최신 뉴스 목록 페이지
+- 상세보기를 누를시 해당 기사 원본 페이지로 이동
 ![image](https://github.com/Hojoomoney/personal-project/assets/138412343/8b4c7c66-0a2e-4ca2-870e-c5a0fde09383)
 
 
