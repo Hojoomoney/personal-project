@@ -16,4 +16,8 @@
 - 상세보기를 누를시 해당 기사 원본 페이지로 이동
 ![image](https://github.com/Hojoomoney/personal-project/assets/138412343/8b4c7c66-0a2e-4ca2-870e-c5a0fde09383)
 
+## Q&A 게시판
+- 전체 목록 혹은 검색을 통한 질문 목록
+![image](https://github.com/Hojoomoney/personal-project/assets/138412343/c8bcf61f-054a-4edf-ab11-dd937acd4172)
+ 
 
