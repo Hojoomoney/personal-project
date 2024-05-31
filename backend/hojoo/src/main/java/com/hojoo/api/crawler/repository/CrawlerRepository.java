@@ -31,11 +31,6 @@ public class CrawlerRepository {
                 articles.add(new Crawler(imgLink, title, content, imgSrc));
             }
 
-            // Print out the articles for demonstration
-//            for (Crawler crawler : articles) {
-//                System.out.println(crawler);
-//            }
-
         } catch (IOException e) {
             e.printStackTrace();
         }

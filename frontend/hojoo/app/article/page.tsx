@@ -54,7 +54,7 @@ export default function Article() {
           'Content-Type': 'application/json',
         }
       })
-        .then((response) => response.json()) // Add 'return' before response.json()
+        .then((response) => response.json()) 
         .then((data) => {
           console.log('응답' + JSON.stringify(data));
           setArticles(data);

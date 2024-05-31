@@ -65,7 +65,6 @@ public class UserDaoImpl implements UserDao{
             throw new AuthException(400,"로그인 후 이용해주세요.");
         }
 
-        // Fetch articles written by the user
         List<Article> articles = factory.selectFrom(article)
                 .where(article.user.id.eq(id))
                 .fetch();

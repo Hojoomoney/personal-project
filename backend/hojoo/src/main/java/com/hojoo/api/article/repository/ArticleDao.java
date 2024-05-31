@@ -13,8 +13,6 @@ public interface ArticleDao {
 
     Long submitAnswer(ArticleDto articleDto);
 
-    Slice<ArticleDto> getPage(String keyword, Pageable pageable);
-
     List<ArticleDto> getListAll();
 
     List<ArticleDto> findTitleByKeyword(String keyword);

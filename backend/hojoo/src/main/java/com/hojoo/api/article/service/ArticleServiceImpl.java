@@ -53,10 +53,6 @@ public class ArticleServiceImpl implements ArticleService {
         return articleRepository.getArticle(id);
     }
 
-    @Override
-    public Slice<ArticleDto> getPage(String keyword, Pageable pageable) {
-        return articleRepository.getPage(keyword, pageable);
-    }
 
     @Override
     public List<ArticleDto> findTitleByKeyword(String keyword) {

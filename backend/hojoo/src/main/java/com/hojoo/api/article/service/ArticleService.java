@@ -30,7 +30,5 @@ public interface ArticleService {
 
     ArticleDto findById(Long id);
 
-    Slice<ArticleDto> getPage(String keyword, Pageable pageable);
-
     List<ArticleDto> findTitleByKeyword(String keyword);
 }

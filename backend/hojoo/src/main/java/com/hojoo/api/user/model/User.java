@@ -26,7 +26,7 @@ public class User extends BaseEntity {
     @Builder.Default
     private String role = "USER";
 
-    @OneToMany(cascade = CascadeType.ALL)
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Article> articles;
 
 }

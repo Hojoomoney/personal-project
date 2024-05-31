@@ -21,7 +21,6 @@ import java.util.List;
 public class ArticleDaoImpl implements ArticleDao{
     private final JPAQueryFactory factory;
     private final QArticle article = QArticle.article;
-    private final QUser user = QUser.user;
     @Override
     public ArticleDto getArticle(Long id) {
         return factory.select(
@@ -45,25 +44,6 @@ public class ArticleDaoImpl implements ArticleDao{
                 .where(article.id.eq(articleDto.getId()))
                 .execute();
 
-    }
-
-    @Override
-    public Slice<ArticleDto> getPage(@Nullable String keyword, Pageable pageable) {
-        List<ArticleDto> articles = factory.select(
-                Projections.fields(ArticleDto.class,
-                        article.id,
-                        article.title,
-                        article.question,
-                        article.user.name.as("writerName"))
-        )
-                .from(article)
-                .where(article.title.containsIgnoreCase(keyword))
-                .offset(pageable.getOffset())
-                .limit(pageable.getPageSize())
-                .orderBy(article.id.desc())
-                .fetch();
-
-        return new SliceImpl<>(articles, pageable, articles.size() > pageable.getPageSize());
     }
 
     @Override

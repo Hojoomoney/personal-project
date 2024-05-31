@@ -35,48 +35,6 @@ export default function News() {
 
     return (<>
         <Header></Header>
-        {/* <div className="flex flex-col">
-        <br /><h1 className="text-4xl font-bold mb-6 text-center">실시간 사건/사고 기사</h1>
-  <div className="overflow-x-auto sm:-mx-6 lg:-mx-8">
-    <div className="inline-block min-w-full py-2 sm:px-6 lg:px-8">
-      <div className="overflow-hidden">
-        <table className="min-w-full text-left text-sm font-light text-surface dark:text-white">
-          <thead className="border-b border-neutral-200 font-medium dark:border-white/10">
-            <tr>
-              <th scope="col" className="px-6 py-4">
-                이미지
-              </th>
-              <th scope="col" className="px-6 py-4">
-                기사 제목
-              </th>
-              <th scope="col" className="px-6 py-4">
-                기사 내용
-              </th>
-            </tr>
-          </thead>
-          <tbody>
-
-        {articles.map((article, index) => (
-            <tr key={index} className="border-b border-neutral-200 transition duration-300 ease-in-out hover:bg-neutral-100 dark:border-white/10 dark:hover:bg-neutral-600">
-                <td className="whitespace-nowrap px-6 py-4 font-medium">
-                    <Link href={article.imgLink} target="_blank" rel="noopener noreferrer">
-                        <img src={article.imgSrc} alt={article.title} width={110} height={75} />
-                    </Link>
-                </td>
-                <td className="whitespace-nowrap px-6 py-4">
-                    <Link href={article.imgLink} target="_blank" rel="noopener noreferrer">{article.title}</Link>
-                </td>
-                <td className={`whitespace-nowrap px-6 py-4 ${styles.content}`}> {/* Use the styles object */}
-                    {/* {article.content}
-                </td>
-            </tr>
-        ))}
-          </tbody>
-        </table>
-      </div>
-    </div>
-  </div>
-</div> } */}
 <br /><h1 className="text-4xl font-bold mb-6 text-center text-gray-800 dark:text-white bg-gradient-to-r from-gray-300 via-gray-500 to-black bg-clip-text text-transparent p-4 rounded-lg shadow-lg">실시간 사건/사고 기사</h1>
 {articles.length > 0 && (
   <div className="flex flex-wrap justify-center gap-4">

@@ -98,22 +98,6 @@ export default function Header(){
         </li>
         <li className="max-lg:border-b border-gray-300 max-lg:py-3 px-3">
           <a
-            href="javascript:void(0)"
-            className="hover:text-[#007bff] text-gray-500 block font-semibold text-[15px]"
-          >
-            About
-          </a>
-        </li>
-        <li className="max-lg:border-b border-gray-300 max-lg:py-3 px-3">
-          <a
-            href="javascript:void(0)"
-            className="hover:text-[#007bff] text-gray-500 block font-semibold text-[15px]"
-          >
-            Contact
-          </a>
-        </li>
-        <li className="max-lg:border-b border-gray-300 max-lg:py-3 px-3">
-          <a
             href={parseCookies().refreshToken != null ? `/detail/${jwtDecode<any>(parseCookies().refreshToken).id}` : "/login"} 
             className="hover:text-[#007bff] text-gray-500 block font-semibold text-[15px]"
           >

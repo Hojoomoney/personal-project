@@ -59,10 +59,6 @@ public class ArticleController {
         return ResponseEntity.ok(service.modify(articleDto));
     }
 
-    @GetMapping("/page")
-    public ResponseEntity<List<ArticleDto>> getPage(@RequestParam("keyword") String keyword, @PageableDefault(size = 10, sort = "id", direction = Sort.Direction.DESC) Pageable pageable){
-        return ResponseEntity.ok(service.getPage(keyword, pageable).getContent());
-    }
     @GetMapping("/search")
     public ResponseEntity<List<ArticleDto>> findTitleByKeyword(@RequestParam("keyword") String keyword){
         return ResponseEntity.ok(service.findTitleByKeyword(keyword));

@@ -84,7 +84,7 @@ const handleAlert = () => {
     type="email"
     className="block border border-grey-light w-9/12 p-3 rounded"
     name="username"
-    placeholder="Username"
+    placeholder="Username(Email)"
     required
   />
   <button
