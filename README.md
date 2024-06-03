@@ -1,7 +1,7 @@
 # 개인 프로젝트
 ## 사용 스택
-- Backend : Spring Boot
-- Frontend : Next js, React
+- Backend : Spring Boot 3
+- Frontend : Next js 14, React 18
 ## 기능 구현
 - 로그인 및 유저정보 CRUD
 - 네이버 최신 뉴스 크롤링
