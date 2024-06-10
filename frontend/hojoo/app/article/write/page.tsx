@@ -49,7 +49,7 @@ export default function Write(){
   />
   <form onSubmit={handleSubmit(onSubmit)}>
   <div className="editor mx-auto w-10/12 flex flex-col text-gray-800 border border-gray-300 p-4 shadow-lg max-w-2xl">
-  <input type="hidden" {...register("writerId", { required: true })} value={jwtDecode<any>(parseCookies().refreshToken).id} />
+{/*   <input type="hidden" {...register("writerId", { required: true })} value={jwtDecode<any>(parseCookies().refreshToken).id} /> */}
     <input
     {...register("title", { required: true })}
       className="title bg-gray-100 border border-gray-300 p-2 mb-4 outline-none"
